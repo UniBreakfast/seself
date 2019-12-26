@@ -26,30 +26,30 @@ const
     await init()
   }, 100),
 
-  init = makeTest(" ", "and it does all that!",
+  init = makeTest("sesElf module is supposed to be exporting an object with one method - a function .attach(dataElf), that supposed to initialize the sesElf with a reference to a dataElf object and add the rest of the methods, also it supposed to return the sesElf object itself", "and it does all that!",
     async (fail, crit)=> {
 
     const absent = []
 
-    if (typeof passElf != 'object')
+    if (typeof sesElf != 'object')
       fail("index.js doesn't export an object")
 
-    if (keys(passElf).length != 1)
-      fail("passElf object expected to have exactly one property at first")
+    if (keys(sesElf).length != 1)
+      fail("sesElf object expected to have exactly one property at first")
 
-    if (!passElf.attach || typeof passElf.attach != 'function')
+    if (!sesElf.attach || typeof sesElf.attach != 'function')
       crit("there's no .attach(dataElf) method")
     else {
-      if (passElf.attach.length != 1)
+      if (sesElf.attach.length != 1)
         fail("the .attach(dataElf) method supposed to expect one argument")
 
-      if (await passElf.attach(dataDuck) != passElf)
-        fail(".attach(dataElf) method supposed to return the same passElf object")
+      if (await sesElf.attach(dataDuck) != sesElf)
+        fail(".attach(dataElf) method supposed to return the same sesElf object")
 
       methods.splice(0, methods.length,...methods.filter(m =>
-        passElf[m] && typeof passElf[m] == 'function'? 1 : absent.push(m) && 0))
+        sesElf[m] && typeof sesElf[m] == 'function'? 1 : absent.push(m) && 0))
       if (absent.length)
-        fail("passElf supposed to have methods: "+absent.join(', '))
+        fail("sesElf supposed to have methods: "+absent.join(', '))
     }
   }),
 
