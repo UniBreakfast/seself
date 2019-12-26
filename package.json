@@ -1,0 +1,23 @@
+{
+  "name": "seself",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node seself.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UniBreakfast/seself.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UniBreakfast/seself/issues"
+  },
+  "homepage": "https://github.com/UniBreakfast/seself",
+  "dependencies": {
+    "bcryptjs": "^2.4.3"
+  }
+}
